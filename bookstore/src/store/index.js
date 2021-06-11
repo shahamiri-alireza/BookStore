@@ -5,6 +5,7 @@ export default createStore({
   state: {
     books:[],
     book:[],
+    count:1,
   },
   mutations: {
     getBooksData(state, response){
@@ -13,7 +14,11 @@ export default createStore({
     getBookData(state, response){
       state.book.pop()
       state.book.push(response.data)
-    }
+    },
+    getCount(state, count){
+      state.count = count
+      console.log(state.count)
+    },
   },
   actions: {
     getBooksData({ commit }){

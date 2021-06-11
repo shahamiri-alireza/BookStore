@@ -26,8 +26,10 @@
             </tr>
         </table>
         <div class="flex flex-col w-full my-10">
-            <input class="mx-auto text-center" type="number" id="bookcount" value="1" min="1" :max="$store.state.book[0].count">
-            <button class="mx-auto w-1/3 my-4 bg-blue-600 h-9 text-white rounded hover:bg-white hover:text-blue-600 border-blue-600 border-2 border-solid">خرید</button>
+            <input class="mx-auto text-center" placeholder="Count" type="number" id="bookcount" min="1" :max="$store.state.book[0].count" v-model.number="count">
+            <button @click="$store.commit('getCount', count)" class="mx-auto w-1/3 my-4 bg-blue-600 h-9 text-white rounded hover:bg-white hover:text-blue-600 border-blue-600 border-2 border-solid">
+            <router-link :to="{name:'Checkout'}" class="w-full">خرید</router-link>
+            </button>
         </div>
     </div>
 </div>
