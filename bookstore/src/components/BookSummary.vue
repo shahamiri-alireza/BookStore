@@ -1,5 +1,5 @@
 <template>
-<div class="w-1/4 flex flex-col m-5 border-blue-600 border-solid border-2 rounded-lg px-5">
+<div class="w-1/4 flex flex-col m-5 border-blue-600 border-solid border-2 rounded-lg px-5 ">
     <div><img :src="image" alt="bookImage" class="w-1/4 mx-auto my-3"></div>
     <div class="w-full flex justify-around">
         <table class="w-full">
@@ -29,9 +29,10 @@
         </table>
     </div>
     <div class="w-full flex justify-around my-5">
-        <button class="w-2/3 mx-auto bg-blue-600 h-9 text-white rounded">اطلاعات بیشتر و خرید</button>
+        <button class="w-2/3 mx-auto bg-blue-600 h-9 text-white rounded hover:bg-white hover:text-blue-600 border-blue-600 border-2 border-solid"><router-link :to="{name:'BookDetails', params:{id:id}}">اطلاعات بیشتر و خرید</router-link></button>
     </div>
 </div>
+<!-- w-2/3 mx-auto bg-blue-600 h-9 text-white rounded -->
 </template>
 
 <script>
@@ -47,6 +48,7 @@ export default {
         remaining: Number,
         price: Number,
         finalPrice: Number,
+        id:Number,
     },
 }
 </script>

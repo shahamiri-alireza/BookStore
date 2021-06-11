@@ -2,7 +2,7 @@
 <div v-if="$store.state.books.length != 0" class="flex justify-around flex-wrap">
 <BookSummary 
 v-for="item in $store.state.books[0]" :key="$store.state.books.indexOf(item)"
-:image = "item.image"
+:image="item.image"
 :title="item.title"
 :authors="item.authors"
 :pages="item.page_count"
@@ -11,6 +11,7 @@ v-for="item in $store.state.books[0]" :key="$store.state.books.indexOf(item)"
 :remaining="item.count"
 :price="item.price"
 :finalPrice="item.final_price"
+:id="item.pk"
 />
 </div>
 </template>
